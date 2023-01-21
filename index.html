@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <main>
+        <div class="left">
+            <div class="one">
+                <div id="no-1" class="no-1"  onclick="clearBg()">1</div>
+                <div class="steps">
+                    <div class="step-1"><p>Step 1</p></div>
+                    <div class="text"><p>YOUR INFO</p></div>
+                </div> 
+            </div>
+            <div class="one">
+                <div id="no-2" class="no-2" onclick=" clearBg2()">2</div>
+                <div class="steps">
+                    <div class="step-1"><p>Step 2</p></div>
+                    <div class="text"><p>SELECT PLAN</p></div>
+                </div> 
+            </div>
+            <div class="one">
+                <div id="no-3" class="no-3" onclick="clearBg3()">3</div>
+                <div class="steps">
+                    <div class="step-1"><p>Step 3</p></div>
+                    <div class="text"><p>ADD-ONS</p></div>
+                </div> 
+            </div>
+            <div class="one">
+                <div id="no-4" class="no-4" onclick="clearBg4()">4</div>
+                <div class="steps">
+                    <div class="step-1"><p>Step 4</p></div>
+                    <div class="text"><p>SUMMARY</p></div>
+                </div> 
+            </div>
+        </div>
+
+        <!-- one  -->
+        <div class="right" id="one" style="display: block;">
+            <div class="personal">
+                <div class="heading-1"><h1>Personal info</h1></div>
+                <div class="para-1"><p>Please provide your name, email address, and phone number</p></div>
+                <div class="per">
+                    <div class="labels">
+                        <label for="Name"> Name</label>
+                        <div id="name-error"></div>
+                    </div>
+                    
+                    <input type="text" name="name" id="name" placeholder="enter full name">
+                   
+                </div>
+                <div class="per">
+                    <div class="labels">
+                        <label for="email">Email Address</label>
+                        <div id="email-error"></div>
+                    </div>
+                 
+                    <input type="email" name="email" id="email" placeholder="enter email here">
+                
+                </div>
+                <div class="per">
+                    <div class="labels">
+                        <label for="phone">Phone Number</label>
+                        <div id="no-error"></div>
+                    </div>
+                    
+                    <input type="text" placeholder="enter phone number" id="number">
+                    
+                </div>
+        
+
+
+                <div class="btn-1"><button onclick="checkname() ; checkmail() ; chechNo() ; one() ">Next Step</button></div>
+            </div>
+        </div>
+
+        <!-- two -->
+        <div class="right" id="two" style="display: none;">
+            <div class="personal">
+                <div class="heading-1"><h1>Select your plan</h1></div>
+                <div class="para-1"><p>You have the option of monthly or yearly billing.</p></div>
+                <div class="plans">
+                    <div class="plan-one" id="plan-1" onclick="selectplan()">
+                        <img src="images/icon-arcade.svg" alt="">
+                        <h4>Arcade</h4>
+                        <div class="para-4" id="text-1">$9/mo</div>
+                        <div  id="year" class="show"> <p>2 months free</p></div>
+                    </div>
+
+                    <div class="plan-one" id="plan-2"  onclick="selectplantwo()">
+                        <img src="images/icon-advanced.svg" alt="">
+                        <h4>Advanced</h4>
+                        <div class="para-4" id="text-2">$12/mo</div>
+                        <div  id="year-one" class="show-one" ><p>2 months free</p></div>
+                    </div>
+
+                    <div class="plan-one" id="plan-3" onclick="selectplanthree()">
+                        <img src="images/icon-pro.svg" alt="">
+                        <h4>Pro</h4>
+                        <div class="para-4" id="text-3">$15/mo</div>
+                        <div  id="year-two" class="show-two" ><p>2 months free</p></div>
+                    </div>
+                </div>
+
+                <div class="selection">
+                    <div class="heading-3"><h3>Monthly</h3></div>
+                    <div class="btn-4" onclick="textChange() ; circlemove() ;textChangeone(); textChangetwo()">
+                        <div  id="circle" class="active"></div>
+                    </div>
+                    <div class="heading-3" ><h3>Yearly</h3></div>
+                </div>
+
+
+                <div class="btns">
+                    <div class="para-2" onclick="goback()"><p>Go Back</p></div>
+                    <div class="btn-2"><button onclick=" check() ; gonext()">Next Step</button></div>
+                </div>
+                
+            </div>
+        </div>
+
+
+        <!-- three -->
+        <div class="right" id="three-one"  style="display: none;">
+                <div class="personal">
+                    <div class="heading-1"><h1>Pick add-ons</h1></div>
+                    <div class="para-1"><p>Add-ons help enhance your gaming experience.</p></div>
+                    <div id="online" >
+                        <div class="check"><input type="checkbox" onclick="online()"></div>
+                        <div class="content">
+                            <h3>Online service</h3>
+                            <div class="para-2">Access to multiplayer games</div>
+                        </div>
+                        <div class="amount"> +$1/mo</div>
+                    </div>
+                    <div id="online-one">
+                        <div class="check"><input type="checkbox" onclick="onlineone()"></div>
+                        <div class="content">
+                            <h3>Large storage</h3>
+                            <div class="para-2">Extra 1TB of cloud save</div>
+                        </div>
+                        <div class="amount"> +$2/mo</div>
+                    </div>
+                    <div id="online-two">
+                        <div class="check"><input type="checkbox" onclick="onlinetwo()"></div>
+                        <div class="content">
+                            <h3>Customizable profile</h3>
+                            <div class="para-2">Custom theme on your profile</div>
+                        </div>
+                        <div class="amount"> +$2/mo</div>
+                    </div>
+
+                    
+                <div class="btns">
+                    <div class="para-2" onclick="gobackone()"><p>Go Back</p></div>
+                    <div class="btn-2"><button onclick=" gonextone() ; nextmonth()">Next Step</button></div>
+                </div>
+                </div>
+        </div>
+
+
+        <!-- three-two  -->
+        <div class="right" id="three-two"  style="display: none;">
+            <div class="personal">
+                <div class="heading-1"><h1>Pick add-ons</h1></div>
+                <div class="para-1"><p>Add-ons help enhance your gaming experience.</p></div>
+                <div id="online-3" >
+                    <div class="check"><input type="checkbox" onclick="online1()"></div>
+                    <div class="content">
+                        <h3>Online service</h3>
+                        <div class="para-2">Access to multiplayer games</div>
+                    </div>
+                    <div class="amount"> +$10/yr</div>
+                </div>
+                <div id="online-4">
+                    <div class="check"><input type="checkbox" onclick="onlineone1()"></div>
+                    <div class="content">
+                        <h3>Large storage</h3>
+                        <div class="para-2">Extra 1TB of cloud save</div>
+                    </div>
+                    <div class="amount"> +$20/yr</div>
+                </div>
+                <div id="online-5">
+                    <div class="check"><input type="checkbox" onclick="onlinetwo1()"></div>
+                    <div class="content">
+                        <h3>Customizable profile</h3>
+                        <div class="para-2">Custom theme on your profile</div>
+                    </div>
+                    <div class="amount"> +$20/yr</div>
+                </div>
+
+                
+            <div class="btns">
+                <div class="para-2" onclick="gobackone()"><p>Go Back</p></div>
+                <div class="btn-2"><button onclick=" gonextone(); nextyear()">Next Step</button></div>
+            </div>
+            </div>
+    </div>
+
+
+    <!-- four  -->
+    <!-- four one  -->
+    <div class="right" id="four-one" style="display: none;">
+        <div class="personal">
+            <div class="heading-1"><h1>Finishing up</h1></div>
+            <div class="para-1"><p>Double-check everthing looks OK before confirming</p></div>
+
+            <div class="arcade">
+                <div class="up">
+                    <div class="a">
+                        <h3>Arcade (Monthly)</h3>
+                        <p onclick="change()">Change</p>
+                    </div>
+                    <div class="amount-one">$9/mo</div>
+                </div>
+
+                <hr>
+                <div class="down">
+                    <div class="b">
+                        <div class="para-2">Online service</div>
+                        <div class="amount">+$1/mo</div>
+                     </div>
+                     <div class="b">
+                        <div class="para-2">Larger storage</div>
+                        <div class="amount">+$2/mo</div>
+                     </div>
+
+                </div>
+            </div>
+            <div class="total">
+                <div class="para-2">Total (per month)</div>
+                <div class="amount-3">+$12/mo</div>
+            </div>
+
+            <div class="btns">
+                <div class="para-2" onclick="gobackthree()"><p>Go Back</p></div>
+                <div class="btn-2"><button onclick="thanks()" >conform</button></div>
+            </div>
+        </div>
+    </div>
+
+
+      
+    <!-- four two  -->
+    <div class="right" id="four-two" style="display: none;">
+        <div class="personal">
+            <div class="heading-1"><h1>Finishing up</h1></div>
+            <div class="para-1"><p>Double-check everthing looks OK before confirming</p></div>
+
+            <div class="arcade">
+                <div class="up">
+                    <div class="a">
+                        <h3>Arcade (Yearly)</h3>
+                        <p onclick="change()">Change</p>
+                    </div>
+                    <div class="amount-one">$90/yr</div>
+                </div>
+
+                <hr>
+                <div class="down">
+                    <div class="b">
+                        <div class="para-2">Online service</div>
+                        <div class="amount">+$10/yr</div>
+                     </div>
+                     <div class="b">
+                        <div class="para-2">Larger storage</div>
+                        <div class="amount">+$20/yr</div>
+                     </div>
+
+                </div>
+            </div>
+            <div class="total">
+                <div class="para-2">Total (per month)</div>
+                <div class="amount-3">+$120/yr</div>
+            </div>
+
+            <div class="btns">
+                <div class="para-2" onclick="gobackthreeone()"><p>Go Back</p></div>
+                <div class="btn-2"><button onclick="thanks()">Conform</button></div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- four three thank you  -->
+        <div class="right" id="thanks" style="display: none;">
+            <div class="image">
+                <img src="images/icon-thank-you.svg" alt="">
+       
+            </div>
+            <h1>Thank you!</h1>
+            <div class="para-2">
+                Thanks for confirming your subscription! We hope you have <br>
+                fun using our platform. If you ever need support, please feel <br>
+                free to email us at support@loremgaming.com.
+            </div>
+        </div>
+
+    </main>
+
+
+
+
+
+<script>
+function check() {
+  if ($("#circle").hasClass("active")) {
+    document.getElementById("three-one").style.display = "block"
+    document.getElementById("two").style.display="none"
+
+    
+  } else {
+    document.getElementById("three-two").style.display = "block"
+    document.getElementById("two").style.display="none"
+
+
+  }
+}
+</script>
+
+    <script src="script.js"></script>
+</body>
+</html>
